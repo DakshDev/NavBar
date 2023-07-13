@@ -1,0 +1,128 @@
+body{
+	padding: 0px;
+	margin: 0px;
+	background-image: linear-gradient(to left, gray, lightblue);
+}
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: arial, sans-serif;
+}
+:root{
+	--primary-color: #0ed145;
+    --primary-hover-color: #0fc846;
+
+	--text-color: #64697d;
+    --text-hover-color: #A0A0A0;
+}
+
+
+#main-box{
+
+}
+
+#main-box>nav{
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+	padding: 5px 10px;
+	background-color: lightgray;
+	position: relative;
+}
+#main-box>nav #logo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+#main-box>nav #logo h1{
+	font-weight: 900;
+	font-size: 30px;
+	color: var(--primary-hover-color);
+	text-align: center;
+}
+#main-box>nav ol{
+	display: flex;
+	flex-wrap: wrap;
+}
+#main-box>nav ol li{
+	list-style: none;
+	text-align: center;
+	margin: 10px;
+}
+#main-box>nav ol li a{
+	padding: 7px 13px;
+	text-decoration: none;
+	background-color: var(--text-color);
+	border-radius: 2px;
+	color: white;
+	border: 1px solid transparent;
+
+}
+#main-box>nav ol li a:hover , #main-box>nav ol li a:focus{
+	background-color: var(--text-hover-color);
+	border: 1px solid var(--text-color);
+}
+#bar-check{
+	display: none;
+}
+#label-bar-box{
+	position: absolute;
+	right: 20px;
+	top: 20%;
+	display: none;
+	z-index: 99;
+}
+#label-bar-box>svg{
+	height: 30px;
+	width: 30px;
+	color: var(--primary-color);
+	cursor: pointer;
+}
+#label-bar-box>svg:hover{
+	background-color: var(--text-hover-color);
+} 
+
+
+
+
+@media screen and (max-width:  670px){
+#main-box>nav #logo h1{
+	font-size: 25px;
+}
+#main-box>nav ol li a{
+	padding: 7px 10px;
+	margin: 7px;
+	text-decoration: none;
+	background-color: var(--text-color);
+	border-radius: 2px;
+	color: white;
+}
+
+
+#main-box>nav ol{
+	position: fixed;
+	top: 0px;
+	left: -100%;
+	width: 100%;
+	height: 100vh;
+	background-color: var(--text-hover-color);
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	grid-gap: 40px 0px;
+	transition-property: all;
+	transition-duration: 0.3s;
+}
+#label-bar-box{
+	display: block;
+}
+
+#bar-check:checked ~ ol{
+	left: 0px;
+}
+
+}
